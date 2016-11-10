@@ -4,21 +4,21 @@ myApp.config(function ($routeProvider){
 	$routeProvider
 	.when('/', {
 		templateUrl: 'partials/home.html',
-		controller: 'exampleController'
+		controller: 'homeController'
 	})
 	.when('/home', {
 		redirectTo: '/'
 	})
 	.when('/contact', {
 		templateUrl: 'partials/contact.html',
-		controller: 'drugiController'
+		controller: 'contactController'
 	})
 	.otherwise({
 		redirectTo: '/'
 	});
 });
 
-myApp.controller('exampleController', function($scope) {
+myApp.controller('homeController', function($scope) {
 
 	$scope.ime = "Ana";
 
@@ -45,6 +45,6 @@ myApp.controller('exampleController', function($scope) {
 
 });
 
-myApp.controller('drugiController', function($scope) {
+myApp.controller('contactController', function($scope) {
 	$scope.x = 5;
 });
