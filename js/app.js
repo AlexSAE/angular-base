@@ -26,3 +26,7 @@ myApp.controller('exampleController', function($scope) {
 	];
 
 });
+
+myApp.controller('drugiController', function($scope) {
+	$scope.x = 5;
+});

@@ -10,20 +10,29 @@
 	<script src="js/angular-sanitize.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body ng-controller="exampleController">
-	<input type="text" ng-model="ime"><br>
-	<h1>Zdravo {{ ime }}!</h1>
-	<hr>
+<body>
 
-	{{users}}
-	<hr>
+	<div ng-controller="exampleController">
+		<input type="text" ng-model="ime"><br>
+		<h1>Zdravo {{ ime }}!</h1>
+		<hr>
 
-	<ul>
-		<li ng-repeat="user in users">
-			<strong>{{user.name}} {{user.lastName}}</strong><br>
-			<span>{{user.email}}</span>
-		</li>
-	</ul>
+		{{users}}
+		<hr>
+
+		<ul>
+			<li ng-repeat="user in users">
+				<strong>{{user.name}} {{user.lastName}}</strong><br>
+				<span>{{user.email}}</span>
+			</li>
+		</ul>
+		<hr>
+	</div>
+	
+	<div ng-controller="drugiController">
+		{{x}}
+	</div>
+
 
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
