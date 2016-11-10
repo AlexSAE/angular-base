@@ -3,16 +3,16 @@
 
 <div ng-controller="exampleController">
 	<input type="text" ng-model="ime"><br>
-	<h1>Zdravo {{ ime }}!</h1>
+	<h1 ng-show="ime">Zdravo {{ ime }}!</h1>
 	<hr>
 
-	{{users}}
+	<div ng-hide="ime">{{users}}</div>
 	<hr>
 
 	<ul>
-		<li ng-repeat="user in users">
-			<strong>{{user.name}} {{user.lastName}}</strong><br>
-			<span>{{user.email}}</span>
+		<li ng-repeat="user in users | filter: ime">
+			<strong>{{ user.name | uppercase }} {{ user.lastName | uppercase }}</strong><br>
+			<span>{{user.email | lowercase }}</span>
 		</li>
 	</ul>
 	<hr>

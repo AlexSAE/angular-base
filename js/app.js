@@ -16,7 +16,6 @@ myApp.config(function ($routeProvider){
 	.otherwise({
 		redirectTo: '/'
 	});
-
 });
 
 myApp.controller('exampleController', function($scope) {
