@@ -44,7 +44,12 @@ myApp.controller('homeController', function($scope) {
 	];
 
 	$scope.showMessage = function() {
-		alert("Hello " + $scope.ime + '!');
+		var ime = $scope.getName();
+		alert("Hello " + ime + '!');
+	};
+
+	$scope.getName = function() {
+		return $scope.ime;
 	};
 
 });
