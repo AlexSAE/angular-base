@@ -18,30 +18,13 @@ myApp.config(function ($routeProvider){
 	});
 });
 
-myApp.controller('homeController', function($scope) {
+myApp.controller('homeController', function($scope, $http) {
 
 	$scope.ime = "Ana";
 
-	$scope.users = [
-		{
-			name: 'Marko',
-			lastName: 'Markovic',
-			email: 'mmarkovic@email.net',
-			id: 51
-		},
-		{
-			name: 'Ana',
-			lastName: 'ANICA',
-			email: 'aana@email.net',
-			id: 24
-		},
-		{
-			name: 'petar',
-			lastName: 'petroviC',
-			email: 'ppera@email.net',
-			id: 14
-		}
-	];
+	$http.get('data/users.json').success(function(data){
+		$scope.users = data;
+	});
 
 	$scope.showMessage = function() {
 		var ime = $scope.getName();
