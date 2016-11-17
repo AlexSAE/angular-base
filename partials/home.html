@@ -6,7 +6,10 @@
 	<h1 ng-show="ime">Zdravo {{ ime }}!</h1>
 	<hr>
 
-	<div ng-hide="ime">{{users}}</div>
+	<button ng-click="showMessage()">Click Me!</button>
+	<hr>
+
+	<div>{{users[0]}}</div>
 	<hr>
 
 	<ul>

@@ -43,6 +43,10 @@ myApp.controller('homeController', function($scope) {
 		}
 	];
 
+	$scope.showMessage = function() {
+		alert("Hello " + $scope.ime + '!');
+	};
+
 });
 
 myApp.controller('contactController', function($scope) {
