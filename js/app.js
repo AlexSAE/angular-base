@@ -18,6 +18,14 @@ myApp.config(function ($routeProvider){
 	});
 });
 
+myApp.filter('captalize', function(){
+	return function(input) {
+		var firstLetter = input[0].toUpperCase();
+		var restOfTheLetters = input.substr(1).toLowerCase();
+		return firstLetter + restOfTheLetters;
+	};
+});
+
 myApp.controller('homeController', function($scope, $http) {
 
 	$scope.ime = "";
