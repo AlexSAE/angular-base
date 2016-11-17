@@ -9,6 +9,10 @@ myApp.config(function ($routeProvider){
 	.when('/home', {
 		redirectTo: '/'
 	})
+	.when('/user/:id', {
+		templateUrl: 'partials/user.html',
+		controller: 'userController'
+	})
 	.when('/contact', {
 		templateUrl: 'partials/contact.html',
 		controller: 'contactController'
@@ -20,9 +24,13 @@ myApp.config(function ($routeProvider){
 
 myApp.filter('captalize', function(){
 	return function(input) {
-		var firstLetter = input[0].toUpperCase();
-		var restOfTheLetters = input.substr(1).toLowerCase();
-		return firstLetter + restOfTheLetters;
+		if (!!input) {
+			var firstLetter = input[0].toUpperCase();
+			var restOfTheLetters = input.substr(1).toLowerCase();
+			return firstLetter + restOfTheLetters;
+		} else {
+			return null;
+		}
 	};
 });
 
@@ -57,4 +65,17 @@ myApp.controller('homeController', function($scope, $http) {
 
 myApp.controller('contactController', function($scope) {
 	$scope.x = 5;
+});
+
+myApp.controller('userController', function($scope, $http, $routeParams){
+	$scope.user = {};
+
+	$http.get('data/users.json').success(function(data){
+		angular.forEach(data, function(value, key){
+			if (value.id == $routeParams.id) {
+				$scope.user = value;
+			}
+		});
+
+	});
 });

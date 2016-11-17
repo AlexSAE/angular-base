@@ -2,7 +2,7 @@
 <p>This is home page</p>
 
 <div ng-controller="homeController">
-	<input type="text" ng-model="ime"><br>
+	<input ng-class="ime ? 'ima-ime' : 'nema-ime' " type="text" ng-model="ime"><br>
 	<h1 ng-show="ime">Zdravo {{ ime }}!</h1>
 	<hr>
 
@@ -14,7 +14,7 @@
 
 	<ul>
 		<li ng-repeat="user in users | filter: ime">
-			<strong>{{ user.name | captalize }} {{ user.lastName | captalize }}</strong><br>
+			<a ng-href="#/user/{{user.id}}"><strong>{{ user.name | captalize }} {{ user.lastName | captalize }}</strong></a><br>
 			<span>{{user.email | lowercase }}</span>
 		</li>
 	</ul>

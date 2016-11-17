@@ -10,3 +10,11 @@ body {
 .footer {
 	text-align: center;
 }
+
+.ima-ime {
+	background-color: green;
+}
+
+.nema-ime {
+	background-color: red;
+}
